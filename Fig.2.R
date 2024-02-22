@@ -15,7 +15,7 @@ mydata$Phylum<- factor(mydata$Phylum, levels = c("Nitrospirota (28 MAGs)","Planc
     geom_point(shape=21,size=3,colour="black",fill="#2268B1")+
     geom_hline(yintercept = 55, linetype = "dashed", color = "#3B9D66", linewidth=1)+
     theme_bw() + 
-    labs(y = "Percentage of lysogens (%)", x = NULL) +
+    labs(y = "Percentage of lysogenic MAGs (%)", x = NULL) +
     theme(panel.border = element_rect(fill=NA,color="black", linewidth=1, linetype="solid"), #linewidth=1
           axis.ticks.x=element_line(color="black",linewidth=1,lineend = 10),
           axis.ticks.y=element_line(color="black",linewidth=1,lineend = 10),
@@ -47,7 +47,7 @@ mydata$Phylum<- factor(mydata$Phylum, levels = c("Gemmatimonadota (30 MAGs)","Ni
     geom_point(shape=21,size=3,colour="black",fill="#2268B1")+
     geom_hline(yintercept = 59, linetype = "dashed", color = "#3B9D66", linewidth=1)+
     theme_bw() +
-    labs(y = "Percentage of lysogens (%)", x = NULL) +
+    labs(y = "Relative abundance of lysogenic MAGs (%)", x = NULL) +
     theme(panel.border = element_rect(fill=NA,color="black", linewidth=1, linetype="solid"), #linewidth=1
           axis.ticks.x=element_line(color="black",linewidth=1,lineend = 10),
           axis.ticks.y=element_line(color="black",linewidth=1,lineend = 10),

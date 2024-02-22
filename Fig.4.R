@@ -16,7 +16,7 @@ dune_pcoa_result <- cbind(dune_pcoa_points, env)
 head(dune_pcoa_result)
 
 library(ggplot2)
-ggplot(dune_pcoa_result, aes(x=PCoA1, y=PCoA2, color=Country, group=Country)) + #shape=Process
+ggplot(dune_pcoa_result, aes(x=PCoA1, y=PCoA2, color=Country, group=Country)) +
   labs(x=paste("PCoA 1 (", eig_percent[1], "%)", sep=""),
        y=paste("PCoA 2 (", eig_percent[2], "%)", sep="")) +
   geom_point(size=4, alpha=0.7
@@ -25,7 +25,7 @@ ggplot(dune_pcoa_result, aes(x=PCoA1, y=PCoA2, color=Country, group=Country)) + 
 
 set.seed(1)
 
-dune.div <- adonis2(data ~ Country, data = env, permutations = 999, method="jaccard", p.adjust.methods="BH")
+dune.div <- adonis2(data ~ Country, data = env, permutations = 999, method="bray", p.adjust.methods="BH")
 
 dune.div
 
@@ -113,5 +113,5 @@ otu1 <- otu
 otu1[otu1 > 0] <- 1
 
 upset(otu1, nset = 6, nintersects = 100, mainbar.y.label = "Numbers of lysogenic MAG", 
-      mainbar.y.max = 270, sets.x.label = "Numbers of lysogenic MAG",
+      mainbar.y.max = 270, sets.x.label = "Numbers of lysogenic MAG", #mainbar.y.max = 620
       order.by = c('freq'), decreasing = c(TRUE, TRUE))

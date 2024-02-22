@@ -6,12 +6,12 @@ windowsFonts(A=windowsFont("Times New Roman"),
 theme(text=element_text(family="A",face="bold",size=20))
 
 
-data <- read.csv("viral_contigs_length_distribution_2.csv",header = T)
+data <- read.csv("viral_contigs_length_distribution.csv",header = T)
 data_part <- read.csv("viral_contigs_length_distribution.csv",header = T)
 
 
 p <- ggplot(data=data)+geom_histogram(mapping = aes(x = length), binwidth = 4, fill="#2268B1", alpha=0.6)+
-  xlab("Genome length (kb) ") + ylab("Frequency") +
+  xlab("The numbers of prophage in each lysogenic MAG") + ylab("Count") +
   theme_bw() + 
   theme(panel.border = element_rect(fill=NA,color="black", linewidth=1, linetype="solid"),
         axis.title.x=element_text(size=15,family="serif",face="bold",color="black"),
@@ -26,7 +26,7 @@ p <- ggplot(data=data)+geom_histogram(mapping = aes(x = length), binwidth = 4, f
 p
 
 p_part <- ggplot(data=data_part)+geom_histogram(mapping = aes(x = length), binwidth = 1, fill="#2268B1", alpha=0.6)+
-  xlab("Genome length (kb) ") + ylab("Frequency") + theme(axis.line = element_line(colour = "black")) +
+  xlab("The numbers of prophage in each lysogenic MAG") + ylab("Count") + theme(axis.line = element_line(colour = "black")) +
   theme_classic() +
   theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank())+
   theme(#panel.border = element_rect(fill=NA,color="black", linewidth=1, linetype="solid"),

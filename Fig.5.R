@@ -39,7 +39,7 @@ compaired <- list(c("CK", "MMC"))
                 test = wilcox.test, 
                 textsize = 4.5, family="serif", color="#000000",
                 size = 0.5) +
-    ylab("Particels /mL") +
+    ylab("Virus-like particels /mL") +
     xlab(NULL)
 )
 
