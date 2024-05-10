@@ -1,1 +1,1 @@
-# NC-Manuscript-code
+# Manuscript-code
